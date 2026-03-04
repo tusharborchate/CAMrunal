@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Wedding Announcement Overlay ---
+    /* --- Wedding Announcement Overlay (COMMENTED OUT) ---
     const weddingOverlay = document.getElementById('weddingOverlay');
     const weddingClose = document.getElementById('weddingClose');
     const weddingEnter = document.getElementById('weddingEnter');
@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === weddingOverlay) dismissWedding();
         });
     }
+    */
 
     // --- Sticky Navigation ---
     const navbar = document.getElementById('navbar');
