@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+    // --- Wedding Announcement Overlay ---
+    const weddingOverlay = document.getElementById('weddingOverlay');
+    const weddingClose = document.getElementById('weddingClose');
+    const weddingEnter = document.getElementById('weddingEnter');
+
+    function dismissWedding() {
+        weddingOverlay.classList.add('hidden');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            weddingOverlay.style.display = 'none';
+        }, 500);
+    }
+
+    if (weddingOverlay) {
+        document.body.style.overflow = 'hidden';
+        weddingClose.addEventListener('click', dismissWedding);
+        weddingEnter.addEventListener('click', dismissWedding);
+        weddingOverlay.addEventListener('click', (e) => {
+            if (e.target === weddingOverlay) dismissWedding();
+        });
+    }
+
     // --- Sticky Navigation ---
     const navbar = document.getElementById('navbar');
     

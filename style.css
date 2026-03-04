@@ -643,3 +643,269 @@ footer {
         height: 260px;
     }
 }
+
+/* --- Wedding Announcement Overlay --- */
+.wedding-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.92);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    animation: weddingFadeIn 0.6s ease;
+}
+
+.wedding-overlay.hidden {
+    animation: weddingFadeOut 0.5s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes weddingFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes weddingFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.wedding-container {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    animation: weddingSlideUp 0.7s ease;
+    position: relative;
+    max-height: 90vh;
+}
+
+@keyframes weddingSlideUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.wedding-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(15, 23, 42, 0.7);
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.wedding-close:hover {
+    background: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.wedding-image {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.wedding-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.wedding-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.4), transparent);
+}
+
+.wedding-content {
+    padding: 50px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.wedding-ornament {
+    color: var(--accent-color);
+    font-size: 1.6rem;
+    letter-spacing: 8px;
+    margin: 5px 0;
+}
+
+.wedding-subtitle {
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--text-color);
+    margin-top: 15px;
+}
+
+.wedding-names {
+    font-family: var(--font-head);
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.wedding-amp {
+    display: block;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+.wedding-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+    margin: 15px auto;
+}
+
+.wedding-text {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.wedding-events {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 10px 0 25px;
+}
+
+.wedding-event {
+    text-align: center;
+}
+
+.wedding-event-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+}
+
+.wedding-event h3 {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.wedding-date {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.wedding-event-separator {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--border-color), transparent);
+}
+
+.wedding-blessing {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-style: italic;
+    margin-bottom: 10px;
+    max-width: 280px;
+    line-height: 1.5;
+}
+
+.wedding-btn {
+    margin-top: 20px;
+    padding: 12px 35px;
+    font-size: 0.9rem;
+}
+
+/* Wedding Responsive */
+@media (max-width: 768px) {
+    .wedding-container {
+        grid-template-columns: 1fr;
+        max-height: 95vh;
+    }
+
+    .wedding-image {
+        height: 220px;
+    }
+
+    .wedding-content {
+        padding: 30px 25px;
+    }
+
+    .wedding-names {
+        font-size: 2.2rem;
+    }
+
+    .wedding-events {
+        gap: 15px;
+    }
+
+    .wedding-event-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wedding-container {
+        width: 95%;
+    }
+
+    .wedding-image {
+        height: 180px;
+    }
+
+    .wedding-content {
+        padding: 20px 15px;
+    }
+
+    .wedding-names {
+        font-size: 1.8rem;
+    }
+
+    .wedding-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+    }
+}
