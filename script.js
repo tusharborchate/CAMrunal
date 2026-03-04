@@ -48,6 +48,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Contact Form Mailto ---
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('cfName').value.trim();
+            const company = document.getElementById('cfCompany').value.trim();
+            const email = document.getElementById('cfEmail').value.trim();
+            const service = document.getElementById('cfService').value;
+            const message = document.getElementById('cfMessage').value.trim();
+
+            const subject = encodeURIComponent('Inquiry from ' + name + ' - ' + service);
+            const body = encodeURIComponent(
+                'Name: ' + name + '\n' +
+                'Company: ' + company + '\n' +
+                'Email: ' + email + '\n' +
+                'Service Required: ' + service + '\n\n' +
+                'Message:\n' + message
+            );
+
+            window.location.href = 'mailto:admin@camrunal.com?subject=' + subject + '&body=' + body;
+        });
+    }
+
     // --- Scroll Animations (Intersection Observer) ---
     const observerOptions = {
         threshold: 0.15, // Trigger when 15% of element is visible

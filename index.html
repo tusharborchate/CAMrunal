@@ -12,7 +12,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=20260304">
+    <link rel="stylesheet" href="style.css?v=20260304b">
 
     <script type="application/ld+json">
     {
@@ -281,22 +281,22 @@
             </div>
 
             <div class="contact-form-container">
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" placeholder="FirstName Surname" required>
+                        <input type="text" id="cfName" placeholder="FirstName Surname" required>
                     </div>
                     <div class="form-group">
                         <label>Company Name</label>
-                        <input type="text" placeholder="Your Company Ltd." required>
+                        <input type="text" id="cfCompany" placeholder="Your Company Ltd." required>
                     </div>
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input type="email" placeholder="abc@company.com" required>
+                        <input type="email" id="cfEmail" placeholder="abc@company.com" required>
                     </div>
                     <div class="form-group">
                         <label>Service Required</label>
-                        <select>
+                        <select id="cfService">
                             <option>Tax Advisory</option>
                             <option>Audit & Assurance</option>
                             <option>Virtual CFO</option>
@@ -306,7 +306,7 @@
                     </div>
                     <div class="form-group">
                         <label>Message</label>
-                        <textarea rows="4" placeholder="Briefly describe your requirements..."></textarea>
+                        <textarea rows="4" id="cfMessage" placeholder="Briefly describe your requirements..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary full-width">Send Message</button>
                 </form>
@@ -351,6 +351,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260304"></script>
+    <script src="script.js?v=20260304b"></script>
 </body>
 </html>
