@@ -602,20 +602,20 @@ footer {
 
 .founder-card {
     background: var(--white);
-    padding: 15px;
+    padding: 12px;
     border: 1px solid var(--border-color);
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     text-align: center;
-    width: 280px; /* Fixed professional width */
+    width: 200px;
 }
 
 .passport-photo {
     width: 100%;
-    height: 320px; /* Standard professional portrait height */
-    object-fit: cover; /* Prevents stretching */
-    object-position: top; /* Ensures the face stays in frame */
+    height: 230px;
+    object-fit: cover;
+    object-position: top;
     border: 1px solid #eee;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .founder-badge p {
@@ -636,11 +636,11 @@ footer {
 /* Responsive adjustment for mobile */
 @media (max-width: 768px) {
     .founder-card {
-        width: 220px;
-        margin: 0 auto 30px;
+        width: 170px;
+        margin: 0 auto 20px;
     }
     .passport-photo {
-        height: 260px;
+        height: 190px;
     }
 }
 
